@@ -1,10 +1,13 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CarrotSpawner : MonoBehaviour
 {
 
     public GameObject carrotPrefab;
+    public GameObject speedCarrotPrefab;
     public float spawnInterval = 2f;
+    public float speedCarrotChance = 0.1f;
     public Transform UpperBound;
     public Transform LowerBound;
     public Transform LeftBound;
@@ -19,7 +22,7 @@ public class CarrotSpawner : MonoBehaviour
 
     void SpawnCarrot()
     {
-        int currentCarrots = GameObject.FindGameObjectsWithTag("Carrot").Length;
+        int currentCarrots = GameObject.FindGameObjectsWithTag("Carrot").Length + GameObject.FindGameObjectsWithTag("SpeedCarrot").Length;
 
         if (currentCarrots >= maxCarrots)
         {
@@ -30,7 +33,12 @@ public class CarrotSpawner : MonoBehaviour
 
         Vector2 pos = new Vector2(x, y);
 
-        Instantiate(carrotPrefab, pos, Quaternion.identity);
-    }
+        bool spawnSpeedCarrot = Random.value < speedCarrotChance;
 
+        if (spawnSpeedCarrot)
+            Instantiate(speedCarrotPrefab, pos, Quaternion.identity);
+        else
+            Instantiate(carrotPrefab, pos, Quaternion.identity);
+
+    }
 }

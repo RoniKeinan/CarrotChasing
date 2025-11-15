@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Carrot
+  - SpeedCarrot
   layers:
   - Default
   - TransparentFX
