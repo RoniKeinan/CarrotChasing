@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3218112780766227695}
   - component: {fileID: 970781309496033937}
-  - component: {fileID: 5120684363920559893}
   - component: {fileID: 3211269859198544613}
   m_Layer: 0
-  m_Name: SeedCarrot
+  m_Name: SpeedCarrot
   m_TagString: SpeedCarrot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,27 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5120684363920559893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2411279101792640111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc31a8319a658141bba3d20c69002a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CarrotSpawner
-  carrotPrefab: {fileID: 2411279101792640111}
-  speedCarrotPrefab: {fileID: 0}
-  spawnInterval: 2
-  speedCarrotChance: 0.1
-  UpperBound: {fileID: 0}
-  LowerBound: {fileID: 0}
-  LeftBound: {fileID: 0}
-  RightBound: {fileID: 0}
-  maxCarrots: 5
 --- !u!58 &3211269859198544613
 CircleCollider2D:
   m_ObjectHideFlags: 0

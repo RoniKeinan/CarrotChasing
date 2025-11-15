@@ -6,8 +6,10 @@ public class CarrotSpawner : MonoBehaviour
 
     public GameObject carrotPrefab;
     public GameObject speedCarrotPrefab;
+    public GameObject badCarrotPrefab;
     public float spawnInterval = 2f;
     public float speedCarrotChance = 0.1f;
+    public float BadCarrotChance = 0.2f;
     public Transform UpperBound;
     public Transform LowerBound;
     public Transform LeftBound;
@@ -22,7 +24,10 @@ public class CarrotSpawner : MonoBehaviour
 
     void SpawnCarrot()
     {
-        int currentCarrots = GameObject.FindGameObjectsWithTag("Carrot").Length + GameObject.FindGameObjectsWithTag("SpeedCarrot").Length;
+        int currentCarrots = GameObject.FindGameObjectsWithTag("Carrot").Length + 
+            GameObject.FindGameObjectsWithTag("SpeedCarrot").Length +
+            GameObject.FindGameObjectsWithTag("BadCarrot").Length;
+
 
         if (currentCarrots >= maxCarrots)
         {
@@ -33,12 +38,19 @@ public class CarrotSpawner : MonoBehaviour
 
         Vector2 pos = new Vector2(x, y);
 
-        bool spawnSpeedCarrot = Random.value < speedCarrotChance;
+        float r = Random.value;
 
-        if (spawnSpeedCarrot)
+        if (r < speedCarrotChance)
+        {
             Instantiate(speedCarrotPrefab, pos, Quaternion.identity);
+        }
+        else if (r < speedCarrotChance + BadCarrotChance)
+        {
+            Instantiate(badCarrotPrefab, pos, Quaternion.identity);
+        }
         else
+        {
             Instantiate(carrotPrefab, pos, Quaternion.identity);
-
+        }
     }
 }

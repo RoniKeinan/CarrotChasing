@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Carrot
   - SpeedCarrot
+  - BadCarrot
   layers:
   - Default
   - TransparentFX

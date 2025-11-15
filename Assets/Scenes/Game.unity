@@ -240,8 +240,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarrotSpawner
   carrotPrefab: {fileID: 2787411123930664505, guid: ac89e56ce00df6b4b8cf3187e5b948c0, type: 3}
   speedCarrotPrefab: {fileID: 2411279101792640111, guid: 1599a3950de11264395fd959035129d3, type: 3}
+  badCarrotPrefab: {fileID: 9209161168808478479, guid: 0e2fda82061455b4aa633f068ad2f724, type: 3}
   spawnInterval: 2
   speedCarrotChance: 0.1
+  BadCarrotChance: 0.2
   UpperBound: {fileID: 2065585542}
   LowerBound: {fileID: 1428304430}
   LeftBound: {fileID: 1247563244}

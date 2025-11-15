@@ -52,6 +52,12 @@ public class Player : MonoBehaviour
             StartCoroutine(speedBoost());
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "BadCarrot")
+        {
+            score = score - 5;
+            UpdateScoreText();
+            Destroy(collision.gameObject);
+        }
     }
 
     IEnumerator speedBoost()
